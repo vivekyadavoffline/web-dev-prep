@@ -1,0 +1,23 @@
+.box{
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+border: 2px solid black;
+   transform: rotate( 40deg);/*
+   transform: scale(1.03) ;*/ /*
+    transform:skewX(2deg);*/
+    transform-origin: 20% 20%; /* change the origin point for transformation */
+    transform: translateX(20%) translateY(30%);
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+}
+.container{
+    height: 200px;
+    width: 200px;
+    border: 2px solid red;
+    
+
+   
+}

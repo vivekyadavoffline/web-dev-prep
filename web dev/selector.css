@@ -1,0 +1,13 @@
+ div.red{ background-color: brown; color: azure;}
+        article{ background-color: rgb(70, 182, 124); color: azure;}
+        div.apple{ background-color: rgb(253, 5, 5); color: azure;}
+        div.banana,.pink{ background-color: rgb(110, 25, 117); color: azure;}
+        div > p{ background-color: rgb(66, 117, 25); color: azure;}
+     #green{ background-color: rgb(35, 184, 242); color: azure;}
+     *{ margin:0;
+    padding:0%;}
+    a:visited{  color: rgb(12, 176, 176);}
+    a:link{  color: rgb(11, 235, 198);}
+a:active{background-color: red;}
+a:hover{background-color: rgb(4, 3, 1);}
+div:hover{ color: blueviolet;}
