@@ -18,3 +18,4 @@ function factorial(n){
     console.log(c);
 }
 factorial(a);
+factorial(a);  
