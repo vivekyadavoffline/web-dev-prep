@@ -5,7 +5,7 @@
 // pink.style.backgroundColor = "pink";
 // a[4].style.backgroundColor = "red";
 // //document.querySelectorAll(".box").forEach(e =>{e.style.backgroundColor = "yellow"});
-// a = [1,2,3,4,5];
+// a = [1,2,3,4,5];                                                                       
 // a.forEach(e =>{console.log(e)});
 // document.getElementsByTagName("div");
 let a = 6
@@ -17,5 +17,4 @@ function factorial(n){
  } )
     console.log(c);
 }
-factorial(a);
 factorial(a);  
