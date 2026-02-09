@@ -13,8 +13,8 @@
     <button id="btn">Click me</button>
     <script>
         let button = document.getElementById("btn");
-        button.addEventListener("click", () => {
-            alert("Button clicked!");
+        button.addEventListener("dblclick", () => {
+           document.querySelector(".box").innerHTML = "<b>button</b> was double clicked";
         });
     </script>
   </body>
