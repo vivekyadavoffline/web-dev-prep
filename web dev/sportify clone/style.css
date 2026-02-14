@@ -1,11 +1,123 @@
-body{
-    /* background-color: rgb(0, 0, 0);
-    color: white; */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: SpotifyMixUI, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, "Helvetica Neue", helvetica, arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, "MS Gothic";
+      font-size: 14px;
 }
+/* color utility */
+.bg-black{
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+.invert{
+    filter: invert(100%);
+}
+.bg-grey{
+   background-color: #1f1f1f;
+}
+.line{
+    border: 0.5px solid #8c8c8c;
+    height: 22px;
+}
+
 .left{
     width: 25vw;
-  
+    padding: 14px;
 }
 .right{
     width: 75vw;
 }
+.home{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+
+}
+.nav-left-section{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.sportify-logo{
+    padding: 0px 20px 0px 22px;
+}
+.grey-icon {
+    width: 22px;
+    filter: invert(75%);
+}
+.home-icon{
+    width: 22px;
+    filter: invert(100%);
+}
+.home-button{
+    display: flex;
+    align-items: center;
+    padding: 13px;
+    border-radius: 100%;
+    margin: 2px;
+   
+}
+.search-box{
+    display: flex;
+    height: 28px;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    border-radius: 30px;
+    width: 500px;
+}
+
+.search-input{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    width: 450px;
+}
+
+.search-input::placeholder{
+    color: #b3b3b3;
+    font-size: 16px;
+}
+.nav-right-section span div {
+    border: 0.5px solid #fdfdfd;
+    height: 25px;
+    padding: 0px ;
+}
+.nav-right-section span{
+   margin: auto 40px auto 20px;
+}
+
+.nav-right-section{
+    display: flex;
+    align-items: center
+}
+.nav-link{
+    text-decoration: none;
+    color:  #8c8c8c;
+    margin: 3px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.btn{
+    padding: 8px 16px;
+    border: none;
+    color:  #8c8c8c;
+    background-color: transparent;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+.btn-log{
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    height: 50px;
+    border-radius: 30px;
+    width: 110px;
+    font-size: 16px;
+    font-weight: 780;
+}
+
