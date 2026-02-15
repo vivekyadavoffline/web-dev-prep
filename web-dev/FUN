@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Padh Le Extreme</title>
+
+<style>
+html, body {
+    margin: 0;
+    height: 100%;
+    background: radial-gradient(circle at top, #111, #000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+}
+
+/* Animated grid background */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(rgba(255,0,0,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,0,0,0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridScroll 25s linear infinite;
+    z-index: -2;
+}
+
+@keyframes gridScroll {
+    from { background-position: 0 0, 0 0; }
+    to   { background-position: 500px 500px, 500px 500px; }
+}
+
+/* Vignette focus */
+body::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 180px rgba(255,0,0,0.35);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Screen shake class (USED BY JS) */
+.screen-shake {
+    animation: screenShake 0.35s;
+}
+
+@keyframes screenShake {
+    0% { transform: translate(0); }
+    20% { transform: translate(-12px, 8px); }
+    40% { transform: translate(12px, -8px); }
+    60% { transform: translate(-8px, -6px); }
+    80% { transform: translate(8px, 6px); }
+    100% { transform: translate(0); }
+}
+
+.container {
+    padding: 60px 80px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow:
+        0 0 30px rgba(255,0,0,0.25),
+        inset 0 0 20px rgba(255,255,255,0.05);
+    text-align: center;
+}
+
+button {
+    padding: 18px 45px;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #fff;
+    background: linear-gradient(135deg, #ff0000, #ff6a00);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255,0,0,0.6);
+    transition: all 0.3s ease;
+    animation: heartbeat 2.8s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    45% { transform: scale(1.04); }
+    50% { transform: scale(1.08); }
+    55% { transform: scale(1.04); }
+}
+
+button:hover {
+    transform: scale(1.12);
+    letter-spacing: 4px;
+    box-shadow: 0 0 50px rgba(255,0,0,1);
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.8),
+        0 0 25px rgba(255,0,0,0.8);
+}
+
+#message {
+    margin-top: 40px;
+    font-size: 70px;
+    font-weight: 900;
+    color: #ff0000;
+    text-shadow:
+        0 0 10px #ff0000,
+        0 0 20px #ff0000,
+        0 0 40px #ff0000;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.5s ease;
+}
+
+#message.active {
+    opacity: 1;
+    transform: scale(1);
+    animation:
+        shake 0.4s ease,
+        glow 1.2s infinite alternate,
+        dangerPulse 1.6s infinite;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0) scale(1); }
+    25% { transform: translateX(-10px) scale(1.05); }
+    50% { transform: translateX(10px) scale(1.05); }
+    75% { transform: translateX(-10px) scale(1.05); }
+    100% { transform: translateX(0) scale(1); }
+}
+
+@keyframes glow {
+    from {
+        text-shadow:
+            0 0 10px #ff0000,
+            0 0 20px #ff0000;
+    }
+    to {
+        text-shadow:
+            0 0 30px #ff0000,
+            0 0 60px #ff0000;
+    }
+}
+
+@keyframes dangerPulse {
+    0%   { filter: brightness(1); }
+    50%  { filter: brightness(1.45); }
+    100% { filter: brightness(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <button onclick="padhLe()">DON'T CLICK</button>
+    <div id="message">PADH LE 📚</div>
+</div>
+
+<script>
+let intensity = 0;
+let autoAttack = null;
+
+function padhLe() {
+    const msg = document.getElementById("message");
+    intensity++;
+
+    msg.classList.remove("active");
+    void msg.offsetWidth;
+    msg.classList.add("active");
+
+    document.body.style.background = `
+        radial-gradient(
+            circle at center,
+            rgb(${60 + intensity*10}, 0, 0),
+            #000
+        )
+    `;
+
+    document.body.classList.remove("screen-shake");
+    void document.body.offsetWidth;
+    document.body.classList.add("screen-shake");
+
+    msg.style.transform = `
+        translate(${random(-20,20)}px, ${random(-10,10)}px)
+        scale(${1 + intensity*0.03})
+    `;
+
+    msg.textContent = intensity < 3
+        ? "PADH LE 📚"
+        : intensity < 6
+        ? "AB PADH LE 😡"
+        : "PHONE RAKH AUR PADH 🔥";
+
+    if (intensity === 3 && !autoAttack) {
+        autoAttack = setInterval(() => {
+            msg.classList.remove("active");
+            void msg.offsetWidth;
+            msg.classList.add("active");
+        }, 2500);
+    }
+}
+
+function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+document.addEventListener("visibilitychange", () => {
+    document.title = document.hidden ? "PADH LE 😈" : "Focus Mode";
+});
+</script>
+
+</body>
+</html>

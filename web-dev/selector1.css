@@ -1,0 +1,35 @@
+/*.box:first-child{
+    background-color: yellow;
+}
+.box:last-child{
+    background-color: green;
+}
+.box::first-line{
+    background-color: aquamarine;
+}*/
+.boxes * {
+  color: aquamarine;
+  border: 2px solid red;
+  background-color: rgb(207, 196, 196);
+}
+[data-color="primary"] {
+  color: blue;
+  padding-top: 20px;
+}
+.box:nth-child(even) {
+  background-color: rgb(0, 0, 0);
+}
+.box::after {
+  content: " - This is after pseudo element";
+  color: red;
+  font-weight: bold;
+}
+.box::before {
+  content: "This is before pseudo element - ";
+  color: green;
+  font-weight: bold;
+}
+::selection {
+  background-color: yellow;
+  color: rgb(0, 255, 110);
+}

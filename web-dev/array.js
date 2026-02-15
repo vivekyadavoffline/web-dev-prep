@@ -1,0 +1,11 @@
+let arr = [1, 2, 7,6 , 5];
+console.log("Original array:", arr);
+console.log(arr.length);
+console.log(arr[3]);
+console.log(arr[4]);
+arr[2] = 3;
+console.log("Modified array:", arr);
+arr.pop();
+console.log("After pop:", arr);
+arr.push(8);
+console.log("After push:", arr);
