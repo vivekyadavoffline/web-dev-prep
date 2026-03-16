@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset=""UTF-8>
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title> why react</title>
         <style>
@@ -13,13 +13,32 @@
                 padding: 3px;
 
             }
+            #btn{
+                background-color: rgb(255, 0, 0);
+                height: 30px;
+                border: 5px red;
+
+               border-radius: 12px;
+            }
+            #btn:hover{  background-color: rgb(255, 154, 154);
+                border: 5px red;
+             
+               border-radius: 12px;}
         </style>
     </head>
     <body>
        <div class="box box1">i m box 1</div>
        <div class="box box2">i m box 2</div>
        <div class="box box3">i m box 3</div>
+       <div id="counter">0</div>
+        <button id="btn">click me</button>
+    
        <script>
+        document.getElementById("btn").addEventListener("click", ()=>{
+           let num = parseInt(document.getElementById("counter").innerHTML)
+            document.getElementById("counter").innerHTML = num + 1;
+        })
+
         setTimeout(() => {
             document.querySelector(".box1").innerHTML = "hey"
         }, 1000);
