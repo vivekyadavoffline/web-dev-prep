@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset=""UTF-8>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title> why react</title>
+        <style>
+            .box{
+                color: red;
+                height: 122px;
+                width: 122px;
+                border: 2px solid black;
+                padding: 3px;
+
+            }
+        </style>
+    </head>
+    <body>
+       <div class="box box1">i m box 1</div>
+       <div class="box box2">i m box 2</div>
+       <div class="box box3">i m box 3</div>
+       <script>
+        setTimeout(() => {
+            document.querySelector(".box1").innerHTML = "hey"
+        }, 1000);
+        setTimeout(() => {
+            document.querySelector(".box2").innerHTML = "hi"
+        }, 2000);
+        setTimeout(() => {
+            document.querySelector(".box3").innerHTML = "hello"
+        }, 3000);
+       </script>
+    </body>
+</html>
