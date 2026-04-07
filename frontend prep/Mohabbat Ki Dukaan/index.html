@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohabbat Ki Dukaan | Rahul Gandhi's Sharbat Shop</title>
+    <meta name="description" content="Nafrat ke bazaar mein mohabbat ki dukaan. Refreshing sharbat served with love.">
+    <!-- Modern Typography: Outfit & Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="particles-js"></div> <!-- Dynamic Particles Background -->
+
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-icon heartbeat"><i class="fa-solid fa-heart"></i></span>
+            <span class="logo-text">Mohabbat Ka<span class="accent"> Sharbat</span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-btn">Home</a></li>
+            <li><a href="#menu" class="nav-btn">Menu</a></li>
+            <li><a href="#game" class="nav-btn">Play Game</a></li>
+            <li><a href="#philosophy" class="nav-btn">Idea of India</a></li>
+            <li><a href="#contact" class="nav-btn">Join Us</a></li>
+        </ul>
+        <div class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <div class="badge bounce">Spreading Love (Mohabbat)</div>
+            <h1 class="slide-in-left">Nafrat ke Bazaar mein <br><span class="gradient-text pulse-text">Mohabbat ki Dukaan</span></h1>
+            <p class="fade-in-up">Join us in spreading sweetness across the nation. Experience the refreshing taste of our signature Sharbats, mixed with love, unity, and brotherhood.</p>
+            <div class="hero-buttons fade-in-up delay-1">
+                <a href="#menu" class="btn btn-primary interactive-btn">Taste the Love <i class="fa-solid fa-glass-water"></i></a>
+                <a href="#game" class="btn btn-secondary interactive-btn">Play Catch the Drops</a>
+            </div>
+        </div>
+        <div class="hero-visual float-animation">
+            <div class="glass-card sharbat-card wobble">
+                <div class="sharbat-icon"><i class="fa-solid fa-heart"></i></div>
+                <div class="sharbat-info">
+                    <h3>Rose Sharbat</h3>
+                    <p>₹100% Love</p>
+                </div>
+            </div>
+            <div class="hero-image-placeholder rotate-bg">
+                <div class="drop drop-1"></div>
+                <div class="drop drop-2"></div>
+                <div class="drop drop-3"></div>
+            </div>
+        </div>
+    </header>
+
+    <section id="menu" class="menu-section">
+        <div class="section-header zoom-in">
+            <h2>Our Sweet <span class="accent">Menu</span></h2>
+            <p>Brewed with unity and natural ingredients</p>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-item tilt-card">
+                <div class="item-visual spin-on-hover"><i class="fa-brands fa-pagelines"></i></div>
+                <div class="item-details">
+                    <h3>Bharat Jodo Rooh Afza</h3>
+                    <p>The classic rose syrup that brings everyone together.</p>
+                    <button class="order-btn">Pour Love</button>
+                </div>
+            </div>
+            <div class="menu-item tilt-card">
+                <div class="item-visual spin-on-hover"><i class="fa-solid fa-lemon"></i></div>
+                <div class="item-details">
+                    <h3>Nyay Lemonade</h3>
+                    <p>Zesty and refreshing, ensuring justice for your thirst.</p>
+                    <button class="order-btn">Pour Love</button>
+                </div>
+            </div>
+            <div class="menu-item tilt-card">
+                <div class="item-visual spin-on-hover"><i class="fa-solid fa-martini-glass"></i></div>
+                <div class="item-details">
+                    <h3>Khus Sharbat (Youth Special)</h3>
+                    <p>Cooling vetiver drink specially crafted for the youth.</p>
+                    <button class="order-btn">Pour Love</button>
+                </div>
+            </div>
+            <div class="menu-item tilt-card">
+                <div class="item-visual spin-on-hover"><i class="fa-solid fa-cookie"></i></div>
+                <div class="item-details">
+                    <h3>Solidarity Snacks</h3>
+                    <p>To go along with your sweet sharbat.</p>
+                    <button class="order-btn">Order Snack</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW GAME SECTION -->
+    <section id="game" class="game-section">
+        <div class="section-header zoom-in">
+            <h2>Spread <span class="accent">Mohabbat</span> Mini-Game</h2>
+            <p>Catch the drops of love (hearts) to fill the Sharbat glass!</p>
+        </div>
+        <div class="game-container">
+            <div class="game-hud">
+                <div class="score-board">Score: <span id="game-score">0</span></div>
+                <div class="timer-board">Time: <span id="game-timer">30</span>s</div>
+            </div>
+            <div id="game-area" class="game-area">
+                <div id="catcher" class="game-catcher"><i class="fa-solid fa-glass-water"></i></div>
+            </div>
+            <button id="start-game-btn" class="btn btn-primary interactive-btn shake-btn">Start Game <i class="fa-solid fa-play"></i></button>
+            <div id="game-message" class="game-message hidden">
+                <h3>Game Over!</h3>
+                <p>You caught <span id="final-score">0</span> drops of love.</p>
+                <button id="restart-game-btn" class="btn btn-secondary">Play Again</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="philosophy" class="quote-section pop-up">
+        <div class="quote-container">
+            <i class="fa-solid fa-quote-left pulse-text"></i>
+            <blockquote>"I have opened a shop of love in the market of hatred (Nafrat ke bazaar mein mohabbat ki dukaan khol raha hoon)."</blockquote>
+            <p class="quote-author">- Rahul Gandhi</p>
+        </div>
+    </section>
+
+    <footer id="contact" class="footer">
+        <div class="footer-content">
+            <div class="footer-brand slide-up">
+                <div class="logo">
+                    <span class="logo-text">Mohabbat Ka<span class="accent">Sharbat</span></span>
+                </div>
+                <p>Walking across the nation, spreading sweetness and unity among all Indians.</p>
+            </div>
+            <div class="footer-links slide-up delay-1">
+                <h3>Walk With Us</h3>
+                <a href="#home">Home</a>
+                <a href="#menu">Menu</a>
+                <a href="#game">Play Game</a>
+            </div>
+            <div class="footer-contact slide-up delay-2">
+                <h3>Visit Us</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Bharat Jodo Yatra Route, Kanyakumari to Kashmir</p>
+                <div class="map-container" style="margin-top: 1rem; border-radius: 10px; overflow: hidden; max-width: 100%;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112061.09262719544!2d77.1089838!3d28.6139391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1703651234567!5m2!1sen!2sin" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <p style="margin-top: 1rem;"><i class="fa-solid fa-person-walking"></i> Always on the move for the people</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mohabbat Ki Dukaan.</p>
+        </div>
+    </footer>
+
+    <!-- JS Libraries for excessive animation -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
