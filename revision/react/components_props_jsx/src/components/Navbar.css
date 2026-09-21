@@ -1,0 +1,19 @@
+nav, ul{
+   align-items: center;
+    display: flex;
+}
+li{
+    list-style-type: none;
+}
+ul{
+    gap: 50px;
+    justify-content: space-between;
+}
+nav{
+    background-color: beige;
+    padding: 13px;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
