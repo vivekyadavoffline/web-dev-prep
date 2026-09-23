@@ -1,15 +1,24 @@
 import './App.css'
-import {useRef} from 'react';
+import {useRef,useState} from 'react';
 function App() {
+const [name, setname] = useState("vivek");
 
  const ref = useRef(0);
     const handelClick = () =>
     {
       alert("hey i am clicked");
     }
-    const handelMouseOver = () =>{
-      ref.current.style.backgroundColor = "blue";
-      ref.current.textContent = "hy i am blue";
+ const handleMouseOver = () => {
+    ref.current.style.backgroundColor = "blue";
+    ref.current.textContent = "hy i am blue";
+};
+
+const handleMouseOut = () => {
+    ref.current.style.backgroundColor = "red";
+    ref.current.textContent = "hy i am red";
+};
+    const handelChange = (e) => {
+      setname(e.target.value)
     }
   return (
 
@@ -18,10 +27,16 @@ function App() {
         <button onClick={handelClick}>
         click me 
         </button>
-
-        <div className="red" ref={ref}  onMouseOver={handelMouseOver}>
-          hy i m red
-        </div>
+<div
+    className="red"
+    ref={ref}
+    onMouseOver={handleMouseOver}
+    onMouseOut={handleMouseOut}
+>
+    hy i am red
+</div>
+        <input type ="text" value={name} onChange={handelChange} >
+        </input>
       </div>
     </>
   );
