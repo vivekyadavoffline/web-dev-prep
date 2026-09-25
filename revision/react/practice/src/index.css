@@ -1,0 +1,14 @@
+.card{
+  border: 2px solid black;
+  margin:10px;
+  padding: 5px;
+ width: 315px;
+  border-radius: 10px;
+  height: auto;
+  background-color: rgb(255, 249, 243);
+
+}
+.container{
+  display: flex;
+  flex-wrap: wrap;
+}
